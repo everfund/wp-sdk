@@ -41,7 +41,7 @@ function everfund_donation_script()
 				if (!t.getElementById(n)) {
 					var e = t.getElementsByTagName(a)[0],
 						r = t.createElement(a);
-					r.type = "text/javascript", r.async = !0, r.src = "https://script.everfund.co.uk/m.js", e.parentNode.insertBefore(r, e)
+					r.type = "text/javascript", r.async = !0, r.src = "https://cdn.jsdelivr.net/npm/@everfund/sdk@1.1.0/dist/m.js", e.parentNode.insertBefore(r, e)
 				}
 			}
 			if ("function" != typeof e.Everfund) {
