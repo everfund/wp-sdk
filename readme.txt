@@ -1,55 +1,65 @@
-=== Everfund New ===
-Contributors:      The WordPress Contributors
-Tags:              block
-Tested up to:      5.7.0
-Stable tag:        0.1.0
-License:           GPL-2.0-or-later
-License URI:       https://www.gnu.org/licenses/gpl-2.0.html
+=== Everfund Donation Widget ===
+Contributors: everfund.io
+Donate link: https://everfund.io
+Tags:  donation, donations, nonprofit, nonprofits, charity, charities, donation widget, fundraising, payment, payments, crowdfunding, campaign, stripe, campaigns, social causes, causes, credit card, credit cards, bacs, direct-debits
+Requires at least: 3.0.1
+Tested up to: 5.7
+Requires PHP: 5.3
+Stable tag: 1.1.0
+License: MIT
+License URI: https://opensource.org/licenses/MIT
 
-Example block written with ESNext standard and JSX support – build step required.
+Everfund takes the friction out of donating with an easy to set up donation portal for your WordPress website that help you convert more income for your charity and give your donors the best experience possible.
 
 == Description ==
 
-This is the long description. No limit, and you can use Markdown (as well as in the following sections).
+### The best donor experience*
 
-For backwards compatibility, if this section is missing, the full length of the short description will be used, and
-Markdown parsed.
+At Everfund, we are pinoeers in donation technology and believe that nothing should get in the way of a donor wanting to support you. Everfund ensures your WordPress website has a high performance donation portal which helps donors make a full and frictionless donation in 30 seconds or less without ever leaving your site.
+
+We have the best donor experience for the highest donation conversions. 92% of donors cover the donation fees on your behalf and on average costs 6.5x less than using platforms like JustGiving for donations.
+
+### Features for high performance donations
+
+Everfund manages everything you need to take a donation, not just a payment. Make your website into a high performance fundraising machine with all the features you need to take a full donation for modern donors:
+
+1. Single Donations
+2. Recurring Donations
+3. Gift Aid
+4. GDPR Concent
+5. Cover Processor Fees
+6. Donation Emails
+7. Customisable Donation System
+8. Apple / Google Pay
+
+### Secure, low admin time and always up to date
+
+Everfund keeps everything secure and updated without having to worry about updating plugins when changes are made and leaves you to focus on your fundraising.
+
+### Words from a happy charities on Everfund 
+
+**Rachel, Trustee @ Society for Renaissance Studies**
+
+"I'm glad we don't have to use PayPal Donate, Everfund's platform is solving a problem we thought was insurmountable"
+
+**Simon Hoare, CEO @ Acts Trust**
+
+"Everfund has fundamentally changed our fundraising, it's given us a easy-to-use platform and most importantly will work for our donors, thousands are raised every month and the significant increase of donations have helped us expand our services despite of Coronavirus"
 
 == Installation ==
 
-This section describes how to install the plugin and get it working.
+Upload the plugin files to the `/wp-content/plugins/everfund-sdk` directory, or install the plugin through the WordPress plugins screen directly.
+Once uploaded using the editor add the everfund code to a button or add html code? 
 
-e.g.
-
-1. Upload the plugin files to the `/wp-content/plugins/everfund-new` directory, or install the plugin through the WordPress plugins screen directly.
-1. Activate the plugin through the 'Plugins' screen in WordPress
-
-
-== Frequently Asked Questions ==
-
-= A question that someone might have =
-
-An answer to that question.
-
-= What about foo bar? =
-
-Answer to foo bar dilemma.
+Stuck? Check out our developer documentation [here](https://developer.everfund.io/donation-button)
 
 == Screenshots ==
 
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the /assets directory or the directory that contains the stable readme.txt (tags or trunk). Screenshots in the /assets
-directory take precedence. For example, `/assets/screenshot-1.png` would win over `/tags/4.3/screenshot-1.png`
-(or jpg, jpeg, gif).
-2. This is the second screen shot
+1. Everfund Donation Widget on Website
+2. Everfund Dashboard
 
 == Changelog ==
 
-= 0.1.0 =
-* Release
+= 1.1.0 =
+* Initial Release
 
-== Arbitrary section ==
-
-You may provide arbitrary sections, in the same format as the ones above. This may be of use for extremely complicated
-plugins where more information needs to be conveyed that doesn't fit into the categories of "description" or
-"installation." Arbitrary sections will be shown below the built-in sections outlined above.
