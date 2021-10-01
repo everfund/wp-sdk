@@ -2,8 +2,8 @@
 Contributors: everfund.io
 Donate link: https://everfund.io
 Tags:  donation, donations, nonprofit, nonprofits, charity, charities, donation widget, fundraising, payment, payments, crowdfunding, campaign, stripe, campaigns, social causes, causes, credit card, credit cards, bacs, direct-debits
-Requires at least: 3.0.1
-Tested up to: 5.7
+Requires at least: 4.5.0
+Tested up to: 5.8.1
 Requires PHP: 5.3
 Stable tag: 1.1.0
 License: MIT
