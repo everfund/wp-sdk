@@ -53,6 +53,11 @@ Once uploaded using the editor add the everfund code to a button or add html cod
 
 Stuck? Check out our developer documentation [here](https://developer.everfund.io/donation-button)
 
+== Disclosure ==
+
+Everfund Wordpress Plugin will automatically add the Everfund’s SDK to your header. It is hosted on [JSDeliver](https://www.jsdelivr.com) as a CDN Version of our [NPM Package](https://www.npmjs.com/package/@everfund/sdk)
+Here are links to view JSDelivr's Policy's, [Acceptable Use Policy](https://www.jsdelivr.com/terms/acceptable-use-policy-jsdelivr-net) and [Privacy Policy](https://www.jsdelivr.com/terms/privacy-policy-jsdelivr-net).
+
 == Screenshots ==
 
 1. Everfund Donation Widget on Website
@@ -62,4 +67,3 @@ Stuck? Check out our developer documentation [here](https://developer.everfund.i
 
 = 1.1.0 =
 * Initial Release
-
