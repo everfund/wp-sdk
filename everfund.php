@@ -53,18 +53,26 @@ function everfund_sdk_script()
     wp_enqueue_script('everfund', 'https://cdn.jsdelivr.net/npm/@everfund/sdk@1.1.0/dist/m.js', false);
 }
 
-function everfund_send_cors_headers($headers)
+function add_allowed_origins($origins)
 {
-    $allowed_domains = ['https://evr.fund', 'http://animals.charity', 'http://appeal.charity', 'http://emergency.charity', 'http://giveto.charity', 'http://hospice.charity', 'http://nhs.charity', 'http://shelter.charity', 'http://urgent.charity', 'http://everfund.co.uk', 'http://api.everfund.co.uk', 'http://everfund.io', 'http://api.everfund.io'];
-    if (!in_array($_SERVER['HTTP_ORIGIN'], $allowed_domains)) {
-        return $headers;
-    }
-    $headers['Access-Control-Allow-Origin'] = $_SERVER['HTTP_ORIGIN'];
+    $origins[] = 'https://evr.fund';
+    $origins[] = 'https://animals.charity';
+    $origins[] = 'https://appeal.charity';
+    $origins[] = 'https://emergency.charity';
+    $origins[] = 'https://giveto.charity';
+    $origins[] = 'https://hospice.charity';
+    $origins[] = 'https://nhs.charity';
+    $origins[] = 'https://shelter.charity';
+    $origins[] = 'https://urgent.charity';
+    $origins[] = 'https://everfund.co.uk';
+    $origins[] = 'https://api.everfund.co.uk';
+    $origins[] = 'https://everfund.io';
+    $origins[] = 'https://api.everfund.io';
 
-    return $headers;
+    return $origins;
 }
 
-add_filter('wp_headers', 'everfund_send_cors_headers', 11, 1);
+add_filter('allowed_http_origins', 'add_allowed_origins');
 add_action('admin_enqueue_scripts', 'everfund_admin_styles');
 add_action('wp_enqueue_scripts', 'everfund_sdk_script');
 add_action('plugins_loaded', 'everfund_show_apple_pay_domain_verification_file');
