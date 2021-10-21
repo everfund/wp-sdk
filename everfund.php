@@ -6,39 +6,35 @@
  * Tags: donation, donations, nonprofit, nonprofits, charity, charities, donation widget, fundraising, payment, payments, crowdfunding, campaign, stripe, campaigns, social causes, causes, credit card, credit cards, bacs, direct-debits
  * Requires at least: 5.3
  * Requires PHP: 7.0
- * Version: 1.1.0
+ * Version: 1.2.1
  * Author: Everfund
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       everfund
- *
- * @package           everfund
+ * Text Domain:       everfund.io.
  */
-
 function everfund_show_apple_pay_domain_verification_file()
 {
-    if ($_SERVER["REQUEST_URI"] == "/.well-known/apple-developer-merchantid-domain-association")
-    {
-        readfile(dirname(__FILE__) . "/apple-developer-merchantid-domain-association");
+    if ($_SERVER['REQUEST_URI'] == '/.well-known/apple-developer-merchantid-domain-association') {
+        readfile(dirname(__FILE__).'/apple-developer-merchantid-domain-association');
         exit();
     }
 }
 
 function everfund_create_menu()
 {
-    add_menu_page(__('Donations', 'everfund') , __('Donations', 'everfund') , 'administrator', __FILE__, 'everfund_plugin_settings_page', 'dashicons-info');
+    add_menu_page(__('Donations', 'everfund'), __('Donations', 'everfund'), 'administrator', __FILE__, 'everfund_plugin_settings_page', 'dashicons-info');
     add_action('plugins_loaded', 'register_everfund_plugin_textdomain');
 }
 
 function everfund_admin_styles()
 {
-    wp_register_style('custom_wp_admin_css', plugins_url("assets/style.css", __FILE__) , false, '1.0.0');
+    wp_register_style('custom_wp_admin_css', plugins_url('assets/style.css', __FILE__), false, '1.0.0');
     wp_enqueue_style('custom_wp_admin_css');
 }
 
 function everfund_plugin_settings_page()
 {
-?>
+    ?>
   <div class="wrap everfund-wrap">
     <div class="everfund-modal">
       <h2 class="everfund-title"><?php _e('Everfund is Installed.', 'everfund'); ?></h2>
@@ -54,11 +50,31 @@ function everfund_plugin_settings_page()
 
 function everfund_sdk_script()
 {
-    wp_enqueue_script('everfund', 'https://cdn.jsdelivr.net/npm/@everfund/sdk@1.1.0/dist/m.js', false);
+    wp_enqueue_script('everfund', plugins_url('/js/m.js', __FILE__));
 }
 
+function add_allowed_origins($origins)
+{
+    $origins[] = 'https://evr.fund';
+    $origins[] = 'https://animals.charity';
+    $origins[] = 'https://appeal.charity';
+    $origins[] = 'https://emergency.charity';
+    $origins[] = 'https://giveto.charity';
+    $origins[] = 'https://hospice.charity';
+    $origins[] = 'https://nhs.charity';
+    $origins[] = 'https://shelter.charity';
+    $origins[] = 'https://urgent.charity';
+    $origins[] = 'https://everfund.co.uk';
+    $origins[] = 'https://api.everfund.co.uk';
+    $origins[] = 'https://everfund.io';
+    $origins[] = 'https://api.everfund.io';
+
+    return $origins;
+}
+
+add_filter('allowed_http_origins', 'add_allowed_origins');
 add_action('admin_enqueue_scripts', 'everfund_admin_styles');
 add_action('wp_enqueue_scripts', 'everfund_sdk_script');
+add_action('wp_head', 'everfund_sdk_script', 1);
 add_action('plugins_loaded', 'everfund_show_apple_pay_domain_verification_file');
-add_action('wp_head', 'everfund_donation_script');
 add_action('admin_menu', 'everfund_create_menu');
