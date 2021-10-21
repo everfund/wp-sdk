@@ -28,7 +28,7 @@ function everfund_create_menu()
 
 function everfund_admin_styles()
 {
-    wp_register_style('custom_wp_admin_css', plugins_url('assets/style.css', __FILE__), false, '1.0.0');
+    wp_register_style('custom_wp_admin_css', plugins_url('css/style.css', __FILE__), false, '1.0.0');
     wp_enqueue_style('custom_wp_admin_css');
 }
 
