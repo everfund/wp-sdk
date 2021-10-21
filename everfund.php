@@ -10,7 +10,7 @@
  * Author: Everfund
  * License:           GPL-2.0-or-later
  * License URI:       https://www.gnu.org/licenses/gpl-2.0.html
- * Text Domain:       everfund.io.
+ * Text Domain:       everfund.io
  */
 function everfund_show_apple_pay_domain_verification_file()
 {
